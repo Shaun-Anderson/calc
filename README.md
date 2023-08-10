@@ -1,38 +1,6 @@
-# create-svelte
+# calc
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A nice calculator app built using svelte/sveltekit focusing on user input, motion and sound.
 
-## Creating a project
+<img width="1624" alt="Screenshot 2023-08-10 at 11 06 57 pm" src="https://github.com/Shaun-Anderson/calc/assets/26397623/a4f2b437-359d-47f3-a17d-fe3ee459bbf0">
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
