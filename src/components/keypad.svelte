@@ -41,17 +41,12 @@
 	}
 
 	.key-pad:active {
-		/* background-color: #ddd !important; */
-		/* transform: scale(0.9, 0.9); */
 		animation-name: example;
 		animation-duration: 0.5s;
 	}
 	.key-pad:hover {
 		transform: scale(0.975, 0.975);
 	}
-	/* .key-pad:focus {
-		transform: scale(0.975, 0.975);
-	} */
 
 	@keyframes example {
 		0% {
@@ -61,20 +56,7 @@
 			transform: scale(0.9, 0.9);
 		}
 		100% {
-			transform: scale(1, 1);
+			transform: scale(0.975, 0.975);
 		}
-	}
-
-	/* Pre-render the bigger shadow, but hide it */
-	.key-pad::after {
-		/* box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5); */
-		box-shadow: inset 0 0 10px #f8a100;
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}
-
-	/* Transition to showing the bigger shadow on hover */
-	.key-pad:hover::after {
-		opacity: 1;
 	}
 </style>

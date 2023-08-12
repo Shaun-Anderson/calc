@@ -6,8 +6,7 @@
 	let total = 0;
 	let history: string[] = [];
 
-	// private function
-	function addToEquation(value) {
+	function addToEquation(value: string | number) {
 		numberInput += value;
 	}
 
@@ -25,27 +24,9 @@
 		}
 	}
 
-	function replaceAll(string, search, replace) {
-		return string.split(search).join(replace);
-	}
-
-	function formatString(value) {
-		return replaceAll(replaceAll(value, '*', 'x'), '/', '÷');
-	}
-
-	// computed
 	let result = () => {
-		// if(isNaN(nu))
-		if (!isNaN(numberInput.slice(-1))) {
-			return eval(numberInput);
-		}
 		return eval(numberInput.slice(0, -1));
 	};
-
-	// reactive values
-	// $: if (numberInput !== '' && !isNaN(numberInput.slice(-1)) && numberInput != result()) {
-	// 	total = result().toString();
-	// }
 </script>
 
 <main class="main">
@@ -64,8 +45,6 @@
 		}}
 	>
 		<div class="screen">
-			<!-- <div class="calculations">{numberInput}</div> -->
-
 			<input
 				type="text"
 				class="total"
@@ -73,8 +52,6 @@
 				on:change={(e) => (numberInput = e.currentTarget.value)}
 			/>
 		</div>
-		<!-- <div><button class="side-button" /></div> -->
-
 		<div class="key-pad-container">
 			<Keypad clicked={() => clear()}>C</Keypad>
 			<Keypad clicked={() => addToEquation('(')}>(</Keypad>
@@ -129,6 +106,7 @@
 		overflow: auto;
 		font-size: 0.8rem;
 	}
+
 	.history li {
 		list-style: none;
 		transition: opacity 1s ease-in-out;
@@ -147,18 +125,6 @@
 	}
 	.history:not(:hover) li {
 		opacity: 0.1;
-	}
-
-	.side-button {
-		border-radius: 0px 5px 5px 0px;
-		background-color: #f8a100 !important;
-		border: 0;
-		position: absolute;
-		right: -0rem;
-		height: 50px;
-	}
-	.calculations {
-		color: aliceblue;
 	}
 	.main {
 		display: flex;
@@ -200,5 +166,19 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		background-color: black;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.main {
+			justify-content: end;
+		}
+		.history {
+			flex-grow: 1;
+		}
+		.device {
+			flex-grow: 0 !important;
+			height: unset;
+			max-height: unset;
+		}
 	}
 </style>
